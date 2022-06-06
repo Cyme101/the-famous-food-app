@@ -12,7 +12,7 @@ const DUMMY_MEALS = [
   {
     id: 'm2',
     name: 'Cauliflower steaks',
-    description: 'A Vegan-Keto specialty!',
+    description: 'A Vegan-Keto specialty',
     price: 17.00,
   },
   {
