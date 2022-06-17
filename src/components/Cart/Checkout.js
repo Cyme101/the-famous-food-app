@@ -1,16 +1,56 @@
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 
 import classes from './Checkout.module.css';
 
+const isEmpty = value => value.trim() === '';
+const isSixChars = value => value.trim().length === 6;
+
 const Checkout = (props) => {
+  const [formInputValidity, setFormInputValidity] = useState({
+    name: true,
+    street: true,
+    city: true,
+    postalCode: true
+  });
+
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalCodeInputRef = useRef();
   const cityInputRef = useRef();
 
-
   const confirmHandler = (event) => {
     event.preventDefault();
+
+    const enteredName = nameInputRef.current.value;
+    const enteredStreet = streetInputRef.current.value;
+    const enteredCity = cityInputRef.current.value;
+    const enteredPostalCode = postalCodeInputRef.current.value;
+
+    const enteredNameIsValid = !isEmpty(enteredName);
+    const enteredStreetIsValid = !isEmpty(enteredStreet);
+    const enteredCityIsValid = !isEmpty(enteredCity);
+    const enteredPostalCodeIsValid = isSixChars(enteredPostalCode);
+
+    setFormInputValidity({
+      name: enteredNameIsValid,
+      street: enteredStreetIsValid,
+      city: enteredCityIsValid,
+      postalCode: enteredPostalCode
+    });
+
+    const formIsValid =
+      enteredName &&
+      enteredStreet &&
+      enteredCity &&
+      enteredPostalCode;
+
+    if (!formIsValid) {
+
+      return;
+    }
+
+    // Submit the Cart data
+
   };
 
   return (
