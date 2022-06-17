@@ -9,9 +9,10 @@
 }
 
 .control label {
+  display: block;
   font-weight: bold;
   margin-bottom: 0.25rem;
-  display: block;
+
 }
 
 .control input {
@@ -40,7 +41,8 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #ffe6dc;
+  background-color: #5FAD56;
+  border: 1px solid #2D4221;
 }
 
 .actions .submit {
