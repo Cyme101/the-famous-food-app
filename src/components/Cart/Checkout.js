@@ -35,7 +35,7 @@ const Checkout = (props) => {
       name: enteredNameIsValid,
       street: enteredStreetIsValid,
       city: enteredCityIsValid,
-      postalCode: enteredPostalCode
+      postalCode: enteredPostalCodeIsValid
     });
 
     const formIsValid =
@@ -58,18 +58,22 @@ const Checkout = (props) => {
       <div className={classes.control}>
         <label htmlFor='name'>Your name</label>
         <input type='text' id='name' ref={nameInputRef} />
+        {!formInputValidity.name && <p>Please enter a valid name.</p>}
       </div>
       <div className={classes.control}>
         <label htmlFor='street'>Street</label>
         <input type='text' id='street' ref={streetInputRef} />
-      </div>
-      <div className={classes.control}>
-        <label htmlFor='postal'>Postal Code</label>
-        <input type='text' id='postal' ref={postalCodeInputRef} />
+        {!formInputValidity.street && <p>Please enter a valid street name.</p>}
       </div>
       <div className={classes.control}>
         <label htmlFor='city'>City</label>
         <input type='text' id='city' ref={cityInputRef} />
+        {!formInputValidity.city && <p>Please enter a valid city.</p>}
+      </div>
+      <div className={classes.control}>
+        <label htmlFor='postal'>Postal Code</label>
+        <input type='text' id='postal' ref={postalCodeInputRef} />
+        {!formInputValidity.postalCode && <p>Please enter a valid postal code (6 characters long).</p>}
       </div>
       <div className={classes.actions}>
         <button type='button' onClick={props.onCancel}>

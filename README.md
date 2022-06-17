@@ -74,4 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/
 
-My progress: 155 of 497 complete as of June 6 2022.
+My progress: 221 of 497 complete as of June 17 2022.
