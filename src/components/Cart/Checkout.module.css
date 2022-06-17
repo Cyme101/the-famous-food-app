@@ -48,7 +48,7 @@
 .actions .submit {
   border: 1px solid #2D4221;
   background-color: #2D4221;
-  color: white;
+  color: #FAF9F6;
 }
 
 .actions .submit:hover,
@@ -57,7 +57,7 @@
 }
 
 .invalid label {
-  color: #ca3e51;
+  color: #990000;
 }
 
 .invalid input {
